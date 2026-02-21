@@ -1,8 +1,8 @@
 # Terraform local state and working directories
 **/.terraform/*
 **/.terraform.lock.hcl
-**/*.tfstate
-**/*.tfstate.*
+#**/*.tfstate
+#**/*.tfstate.*
 
 # Terraform variable files that may contain secrets
 **/*.tfvars
