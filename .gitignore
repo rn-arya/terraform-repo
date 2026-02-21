@@ -1,0 +1,12 @@
+# Terraform local state and working directories
+**/.terraform/*
+**/.terraform.lock.hcl
+**/*.tfstate
+**/*.tfstate.*
+
+# Terraform variable files that may contain secrets
+**/*.tfvars
+**/*.auto.tfvars
+
+# Local Terraform binaries/downloads
+terraform_1.14.5_windows/terraform.exe
