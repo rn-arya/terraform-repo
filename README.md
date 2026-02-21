@@ -21,6 +21,14 @@ provider "github" {
 $env:TF_VAR_github_token = "YOUR_NEW_GITHUB_PAT"
 ```
 
+Alternative (local file, not committed):
+
+```powershell
+cd .\tf-github
+Copy-Item .\github.auto.tfvars.example .\github.auto.tfvars
+# Edit github.auto.tfvars and replace the placeholder token value
+```
+
 3. Run Terraform from `tf-github`:
 
 ```powershell
@@ -29,6 +37,22 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+### Verify token is loaded
+
+Run from `tf-github`:
+
+```powershell
+terraform console
+```
+
+Then check the variable value Terraform sees:
+
+```hcl
+nonsensitive(var.github_token)
+```
+
+If it returns empty/null, set `TF_VAR_github_token` or create `github.auto.tfvars`.
 
 ### Security checklist
 
